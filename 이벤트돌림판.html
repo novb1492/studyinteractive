@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arrowdiv img{
+        transition: transform 2s cubic-bezier(0.075,0.82,0.165,1);
+        width: 30%;}
+    </style><!--img를 붙히니까 css로 컨트롤이된다..?20210607-->
+    <script>
+        window.onload=function(){
+
+                var reset=document.querySelector(".reset");
+                var start=document.querySelector(".start");
+                var rotatenum=0;
+
+                var h1=document.getElementsByTagName("h1")[0];
+                var arrow=document.querySelector(".arrow");
+
+                start.addEventListener("click",function(){
+                    rotatenum=Math.round(Math.random()*360);
+                    h1.innerHTML=rotatenum+"deg";
+                    arrow.style.transform="rotate("+rotatenum+"deg)"
+                })
+                reset.addEventListener("click",function(){
+                    rotatenum=0;
+                    h1.innerHTML=rotatenum+"deg";
+                    arrow.style.transform="rotate("+rotatenum+"deg)";
+                })
+            
+        }
+    </script>
+</head>
+<body>
+    <button type="button" class="reset">리셋</button>
+    <button type="button" class="start">회전</button>
+    <h1>0deg</h1>
+    <div class="arrowdiv">
+        <img src="up-arrow.svg" alt="arrow" class="arrow" >
+    </div>
+</body>
+</html>
