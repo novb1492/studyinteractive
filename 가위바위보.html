@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <style>
+        h1{
+            font-size: 100px;
+            font-weight: bold;
+        }
+        button{
+            font-size: 20px;
+            padding: 10px 30px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+         window.onload =function(){
+            var button=document.querySelector(".startbtn");
+            //여러개일경우
+            //document.querySelectorAll(".startbtn")[0];가능하다
+            var h1=document.getElementsByName("h1")[0];
+            var handarr=["가위","바위","보"];
+            button.addEventListener("click",function(){
+                var num=Math.round(Math.random()*(handarr.length-1));///math.random소수점까지 막주니까 round로 반올림
+                alert(handarr[num]);
+                h1.innerHTML=handarr[num];
+            })
+        }
+       
+    </script>
+</head>
+<body>
+    <button type="button" class="startbtn">리셋</button><!--제발 오타조심하자 제발-->
+    <h1>가위</h1>
+</body>
+</html>
